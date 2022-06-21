@@ -28,7 +28,13 @@
   </head>
 
   <body>
+    <!-- ======= ContentJudul ======= -->
+    {% include "judul.html" %}
+    <!-- ======= EndContentJudul ======= -->
+
+    <!-- ======= Content ======= -->
     {% block content %} {% endblock content %}
+    <!-- ======= EndContent ======= -->
 
     <!-- ======= Footer ======= -->
     {% include "footer.html" %}

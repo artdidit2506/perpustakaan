@@ -28,20 +28,22 @@
   </head>
 
   <body>
-    <!-- ======= ContentJudul ======= -->
-    {% include "judul.html" %}
-    <!-- ======= EndContentJudul ======= -->
+    <div class="container">
+      <!-- ======= ContentJudul ======= -->
+      {% include "judul.html" %}
+      <!-- ======= EndContentJudul ======= -->
 
-    <!-- ======= Content ======= -->
-    {% block content %} {% endblock content %}
-    <!-- ======= EndContent ======= -->
+      <!-- ======= Content ======= -->
+      {% block content %} {% endblock content %}
+      <!-- ======= EndContent ======= -->
 
-    <!-- ======= Footer ======= -->
-    {% include "footer.html" %}
-    <!-- End Footer -->
+      <!-- ======= Footer ======= -->
+      {% include "footer.html" %}
+      <!-- End Footer -->
 
-    <!-- Vendor JS Files -->
-    <!-- Template Main JS File -->
-    {% include "js.html" %}
+      <!-- Vendor JS Files -->
+      <!-- Template Main JS File -->
+      {% include "js.html" %}
+    </div>
   </body>
 </html>

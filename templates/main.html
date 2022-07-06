@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% load static %}
+{% load static %}
 
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Perpustakaan</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
+  <title>Perpustakaan</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
 
-    <!-- Favicons -->
-    {% include "favicon.html" %}
+  <!-- Favicons -->
+  {% include "favicon.html" %}
 
-    <!-- Google Fonts -->
-    {% include "google.html" %}
+  <!-- Google Fonts -->
+  {% include "google.html" %}
 
-    <!-- Vendor CSS Files -->
-    <!-- Template Main CSS File -->
-    {% include 'css.html' %}
+  <!-- Vendor CSS Files -->
+  <!-- Template Main CSS File -->
+  {% include 'css.html' %}
 
-    <!-- =======================================================
+  <!-- =======================================================
   * Template Name: Didit Y - v2.2.2
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
 ======================================================== -->
-  </head>
+</head>
 
-  <body>
-    <div class="container">
-      <!-- ======= ContentJudul ======= -->
-      {% include "judul.html" %}
-      <!-- ======= EndContentJudul ======= -->
+<body>
+  <!-- ======= Header ======= -->
+  {% include 'header.html' %}
+  <!-- End Header -->
+  <br>
+  <br>
+  <div class="container">
+    <!-- ======= ContentJudul ======= -->
+    {% include "judul.html" %}
+    <!-- ======= EndContentJudul ======= -->
 
-      <!-- ======= Content ======= -->
-      {% block content %} {% endblock content %}
-      <!-- ======= EndContent ======= -->
+    <!-- ======= Content ======= -->
+    {% block content %} {% endblock content %}
+    <!-- ======= EndContent ======= -->
 
-      <!-- ======= Footer ======= -->
-      {% include "footer.html" %}
-      <!-- End Footer -->
+    <!-- ======= Footer ======= -->
+    {% include "footer.html" %}
+    <!-- End Footer -->
 
-      <!-- Vendor JS Files -->
-      <!-- Template Main JS File -->
-      {% include "js.html" %}
-    </div>
-  </body>
+    <!-- Vendor JS Files -->
+    <!-- Template Main JS File -->
+    {% include "js.html" %}
+  </div>
+</body>
+
 </html>

@@ -2,7 +2,18 @@
 <!-- content -->
 {% block content %}
 <!-- Form -->
-<form action="" method="">{{ form.as_p }}</form>
+<div class="container">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <form action="/tambah-buku/" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-primary">Tambah Buku</button>
+            </form>
+        </div>
+    </div>
+</div>
 <!-- EndForm -->
+
 {% endblock content %}
 <!-- EndContent -->

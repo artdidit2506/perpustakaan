@@ -1,13 +1,33 @@
 {% extends "main.html" %}
 <!-- content -->
 {% block content %}
-<br>
-<h2>Daftar Buku</h2>
-<!-- for -->
-{% for buku in books %}
-<li>{{ buku.judul }}</li>
-{% endfor %}
-{{ penulis }}
-<!-- endfor -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Judul</th>
+                        <th>Penulis</th>
+                        <th>Penerbit</th>
+                        <th>Jumlah</th>
+                        <th>Kelompok</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for buku in books %}
+                    <tr>
+                        <td>{{ buku.judul }}</td>
+                        <td>{{ buku.penulis }}</td>
+                        <td>{{ buku.penerbit }}</td>
+                        <td>{{ buku.jumlah }}</td>
+                        <td>{{ buku.kelompok_id }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock content %}
 <!-- endcontent -->

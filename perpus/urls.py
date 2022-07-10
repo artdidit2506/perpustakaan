@@ -16,6 +16,7 @@ Including another URLconf
 from zipfile import Path
 from django.contrib import admin
 from django.urls import path, include
+from perpustakaan.views import buku, penerbit, tambah_buku
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -7,6 +7,9 @@
       <h1 class="mt-4">Selamat Datang di Perpustakaan</h1>
       <p>Perpustakaan ini menyediakan berbagai macam buku yang bisa anda pinjam.</p>
     </div>
+    {% if user.is_authenticated %}
+    <p>User online: {{ user }}</p>
+    {% endif %}
   </div>
 </div>
 {% endblock judul %}

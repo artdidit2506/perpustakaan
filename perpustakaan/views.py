@@ -1,3 +1,4 @@
+from email import message
 from multiprocessing import context
 from django.shortcuts import render, redirect
 from perpustakaan.models import Buku
@@ -6,13 +7,20 @@ from django.contrib import messages
 # Create your views here.
 
 
+def hapus_buku(request, id_buku):
+    buku = Buku.objects.filter(id=id_buku)
+    buku.delete()
+    messages.success(request, 'Data berhasil dihapus')
+    return redirect('buku')
+
+
 def ubah_buku(request, id_buku):
     buku = Buku.objects.get(id=id_buku)
     if request.POST:
         form = FormBuku(request.POST, instance=buku)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Data berhasil diubah')
+            messages.success(request, 'Data berhasil diperbarui')
             return redirect('ubah_buku', id_buku=id_buku)
 
     else:
@@ -43,6 +51,9 @@ def tambah_buku(request):
         form = FormBuku(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Data berhasil ditambahkan')
+
+            return redirect('buku')
             form = FormBuku()
 
             context = {

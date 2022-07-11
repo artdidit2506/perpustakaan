@@ -6,4 +6,5 @@ urlpatterns = [
     path('penerbit/', views.penerbit, name='penerbit'),
     path('tambah-buku/', views.tambah_buku, name='tambah-buku'),
     path('buku/ubah/<int:id_buku>', views.ubah_buku, name='ubah_buku'),
+    path('buku/hapus/<int:id_buku>', views.hapus_buku, name='hapus_buku'),
 ]

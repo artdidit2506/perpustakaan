@@ -14,7 +14,12 @@ class FormBuku(ModelForm):
 
 
 widget = {
-    'judul': forms.TextInput({'class': 'form-control', 'id': 'Judul Buku'}),
+    'judul': forms.TextInput(attrs={
+        'class': 'form-control',
+        'id': 'Judul Buku',
+        'placeholder': 'Judul Buku',
+    }),
+
     'penulis': forms.TextInput({'class': 'form-control', 'id': 'Penulis'}),
     'penerbit': forms.TextInput({'class': 'form-control', 'id': 'Penerbit'}),
     'jumlah': forms.NumberInput({'class': 'form-control', 'id': 'Jumlah'}),

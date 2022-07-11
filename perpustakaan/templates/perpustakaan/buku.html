@@ -31,17 +31,20 @@
                 <tbody>
                     {% for buku in books %}
                     <tr>
-                        <td><a href="{% url 'ubah_buku' buku.id %}">{{buku.judul}}</a></td>
+                        <td>{{buku.judul}}</a></td>
                         <td>{{ buku.penulis }}</td>
                         <td>{{ buku.penerbit }}</td>
                         <td>{{ buku.jumlah }}</td>
                         <td>{{ buku.kelompok_id }}</td>
                         <td>
                             <!-- Modal1 -->
+                            <a class="btn btn-success" href="{% url 'ubah_buku' buku.id %}">Edit</a>
+
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                 data-bs-target="#hapus-{{ buku.id }}">
                                 Hapus
                             </button>
+
                             <div class="modal" id="hapus-{{buku.id}}">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -64,30 +67,32 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Menu Hapus -->
-                            <!-- Button trigger modal -->
-                            <!-- Modal -->
-                            <!-- <div class="modal fade" id="hapus-{{ buku.id }}" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                Apakah anda yakin menghapus <strong>{{ buku.judul | upper }}?</strong>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                                                    <a href="{% url 'hapus_buku' buku.id %}">Hapus</a>
-                                                </button>
-                                                <button type="button" class="btn btn-primary">Tidak</button>
-                                            </div>
+                        </td>
+                        <td>
+                            <!-- Modal1 -->
+
+                            <div class="modal" id="hapus-{{buku.id}}">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Hapus Buku</h4>
+                                            <button type="button" class="close" data-bs-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Apakah anda yakin ingin menghapus {{buku.judul | upper}}?</p>
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Batal</button>
+                                            <a href="{% url 'hapus_buku' buku.id %}" class="btn btn-danger">Hapus</a>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     {% endfor %}

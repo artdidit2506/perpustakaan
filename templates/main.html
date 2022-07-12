@@ -29,17 +29,19 @@
 
 <body>
   <!-- ======= Header ======= -->
-  {% include "header.html" %}
+  {% block header %}
+  {% endblock header %}
   <!-- End Header -->
-  <hr>
-  <hr>
   <div class="container">
     <!-- ======= ContentJudul ======= -->
-    {% include "judul.html" %}
+    {% block judul %}
+    {% endblock judul %}
+
     <!-- ======= EndContentJudul ======= -->
 
     <!-- ======= Content ======= -->
-    {% block content %} {% endblock content %}
+    {% block content %}
+    {% endblock content %}
     <!-- ======= EndContent ======= -->
 
     <!-- ======= Footer ======= -->

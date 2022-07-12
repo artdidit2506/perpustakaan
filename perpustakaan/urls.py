@@ -11,4 +11,5 @@ urlpatterns = [
     path('buku/hapus/<int:id_buku>', views.hapus_buku, name='hapus_buku'),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('register/', views.register, name='register'),
 ]

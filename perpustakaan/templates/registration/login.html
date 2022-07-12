@@ -2,6 +2,10 @@
 {% load static %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
+<meta http-equiv="refresh" content="0; url={% url 'buku' %}">
+{% else %}
 <main>
     <div class="container">
 
@@ -51,7 +55,8 @@
                                         <button class="btn btn-primary w-100" type="submit">Login</button>
                                     </div>
                                     <div class="col-12">
-                                        <p class="small mb-0">Don't have account? <a href="{% url 'buku'%}">Create an
+                                        <p class="small mb-0">Don't have account? <a href="{% url 'register' %}">Create
+                                                an
                                                 account</a>
                                         </p>
                                     </div>
@@ -76,4 +81,6 @@
 
     </div>
 </main>
+{% endif %}
+
 {% endblock content %}

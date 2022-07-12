@@ -6,8 +6,26 @@ from perpustakaan.forms import FormBuku
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
-
+from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
+
+
+def register(request):
+    if request.POST:
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Selamat, Anda telah terdaftar!')
+            return redirect('register')
+        else:
+            messages.error(request, 'Mohon maaf, Anda gagal terdaftar!')
+            return redirect('register')
+    else:
+        form = UserCreationForm()
+        context = {
+            'form': form,
+        }
+        return render(request, 'registration/register.html', context)
 
 
 @login_required(login_url=settings.LOGIN_URL)

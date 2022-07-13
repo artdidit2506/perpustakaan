@@ -12,8 +12,8 @@ from perpustakaan.resource import BukuResource
 # Create your views here.
 
 
+@login_required(login_url=settings.LOGIN_URL)
 def export_xls(request):
-
     # Create an instance of the resource class
     buku = BukuResource()
     dataset = buku.export()

@@ -10,6 +10,7 @@ from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
 
+@login_required(login_url=settings.LOGIN_URL)
 def register(request):
     if request.POST:
         form = UserCreationForm(request.POST)

@@ -20,6 +20,7 @@
                 <a href="/" class="btn btn-success">Home</a>
                 <a href="logout/" class="btn btn-success">Logout</a>
                 <a class="btn btn-primary" href="{% url 'tambah-buku' %}">Tambah</a>
+                <a class="btn btn-success" href="{% url 'export_xls' %}">Export(.xls)</a>
 
                 {{ buku.judul }}
                 {% for message in messages %}
@@ -37,6 +38,7 @@
                         <th>Penulis</th>
                         <th>Penerbit</th>
                         <th>Jumlah</th>
+                        <th>Date</th>
                         <th>Kelompok</th>
                         <th>Action</th>
                     </tr>
@@ -53,6 +55,7 @@
                         <td>{{ buku.penulis }}</td>
                         <td>{{ buku.penerbit }}</td>
                         <td>{{ buku.jumlah }}</td>
+                        <td>{{ buku.datetime }}</td>
                         <td>{{ buku.kelompok_id }}</td>
                         <td>
                             <!-- Modal1 -->

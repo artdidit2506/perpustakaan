@@ -1,3 +1,4 @@
+from datetime import date, datetime
 from django.db import models
 
 # Create your models here.
@@ -19,7 +20,7 @@ class Buku(models.Model):
     kelompok_id = models.ForeignKey(
         Kelompok, on_delete=models.CASCADE, null=True)
     cover = models.ImageField(upload_to='cover/', null=True)
-    tanggal = models.DateField(auto_now_add=True, null=True)
+    datetime = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return self.judul

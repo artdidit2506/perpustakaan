@@ -13,6 +13,7 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('register/', views.register, name='register'),
+    path('export/xls/', views.export_xls, name='export_xls'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

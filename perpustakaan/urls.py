@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 from perpustakaan.views import *
 from django.contrib.auth.views import LoginView, LogoutView
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.buku, name='buku'),
@@ -13,3 +14,6 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('register/', views.register, name='register'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

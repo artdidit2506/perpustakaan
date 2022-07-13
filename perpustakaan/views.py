@@ -41,7 +41,7 @@ def hapus_buku(request, id_buku):
 def ubah_buku(request, id_buku):
     buku = Buku.objects.get(id=id_buku)
     if request.POST:
-        form = FormBuku(request.POST, instance=buku)
+        form = FormBuku(request.POST, instance=buku, files=request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'Data berhasil diperbarui')
@@ -75,7 +75,7 @@ def penerbit(request):
 @login_required(login_url=settings.LOGIN_URL)
 def tambah_buku(request):
     if request.POST:
-        form = FormBuku(request.POST)
+        form = FormBuku(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'Data berhasil ditambahkan')

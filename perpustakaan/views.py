@@ -23,23 +23,23 @@ def export_xls(request):
     return response
 
 
-@login_required(login_url=settings.LOGIN_URL)
 def register(request):
-    if request.POST:
+    if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Selamat, Anda telah terdaftar!')
-            return redirect('register')
+            messages.success(request, 'Berhasil mendaftar, silahkan login')
+            return redirect('login')
         else:
-            messages.error(request, 'Mohon maaf, Anda gagal terdaftar!')
+            messages.error(request, 'Gagal mendaftar, silahkan coba lagi')
             return redirect('register')
+
     else:
         form = UserCreationForm()
         context = {
             'form': form,
         }
-        return render(request, 'registration/register.html', context)
+        return render(request, 'register.html', context)
 
 
 @login_required(login_url=settings.LOGIN_URL)

@@ -1,6 +1,5 @@
 {% extends "main.html" %}
-
-
+{% load static %}
 {% block content %}
 <div class="container">
     <div class="row">
@@ -20,6 +19,7 @@
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button class="btn btn-primary">Register</button>
+                    <a href="{% url 'buku' %}" class="btn btn-info">Home</a></li>
                 </form>
             </div>
         </div>

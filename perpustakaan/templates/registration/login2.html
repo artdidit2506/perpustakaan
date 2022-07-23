@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+{% load static %}
+
+<!-- Content -->
+{% block content %}
+<!-- Login -->
+
+{% if page == 'login' %}
+
+<main>
+    <div class="container">
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex justify-content-center py-4">
+                            <a href="{% url 'buku'%}" class="logo d-flex align-items-center w-auto">
+                                <img src="{% static 'img/logo.png' %}" alt="">
+                                <span class="d-none d-lg-block">PT.SAHABAT</span>
+                            </a>
+                        </div>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <form class="row g-3 needs-validation" method="POST" action="">
+                                    {% csrf_token %}
+                                    <label for="">Username :</label>
+                                    <input type="text" name="username" placeholder="Enter Username">
+                                    <label for="">Password :</label>
+                                    <input type="password" name="password" placeholder="Enter Password">
+                                    <input type="submit" value="login">
+                                </form>
+                                <p>Havent signed up yet?</p>
+                                <a href="{% url 'register' %}">Sign Up</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    {% else %}
+
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %} {{form.as_p}}
+            <input type="submit" value="Register">
+        </form>
+        <p>Already signed up yet?</p>
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+</main>
+{% endif %} {% endblock content %}
+<!-- End Content -->

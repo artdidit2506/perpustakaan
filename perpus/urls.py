@@ -21,4 +21,6 @@ from perpustakaan.views import buku, penerbit, tambah_buku
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('perpustakaan.urls')),
+    path("members/", include('django.contrib.auth.urls')),
+    path('members/', include('members.urls')),
 ]
